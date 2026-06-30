@@ -158,12 +158,12 @@ export default function DashboardView({
   const sampleJsonString = JSON.stringify([
     {
       "name": "Summer Wellness Day",
-      "date": "2026-08-20",
+      "date": `${new Date().getFullYear()}-08-20`,
       "type": "Optional"
     },
     {
       "name": "Autumn Hackathon Kickoff",
-      "date": "2026-10-02",
+      "date": `${new Date().getFullYear()}-10-02`,
       "type": "Company"
     }
   ], null, 2);
@@ -441,7 +441,7 @@ export default function DashboardView({
     setTimeout(() => setExported(false), 2000);
 
     // Create a mock ICS string
-    let icsContent = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//LeaveFlow//NONSGML v1.0//EN\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nX-WR-CALNAME:LeaveFlow & Company Holidays 2026\nX-WR-TIMEZONE:Asia/Kolkata\n";
+    let icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//LeaveFlow//NONSGML v1.0//EN\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nX-WR-CALNAME:LeaveFlow & Company Holidays ${new Date().getFullYear()}\nX-WR-TIMEZONE:Asia/Kolkata\n`;
     
     // 1. Export Company Holidays
     holidays.forEach(h => {
@@ -517,7 +517,7 @@ export default function DashboardView({
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-on-surface">Welcome back</h2>
-          <p className="text-base text-on-surface-variant font-medium">Here is your leave overview for the 2026 fiscal year.</p>
+          <p className="text-base text-on-surface-variant font-medium">Here is your leave overview for the {new Date().getFullYear()} fiscal year.</p>
         </div>
         <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
           <button 
@@ -1117,10 +1117,11 @@ export default function DashboardView({
                       <button
                         type="button"
                         onClick={() => {
+                          const currentYearStr = new Date().getFullYear().toString();
                           const sample = [
-                            { name: "Summer Wellness Day", date: "2026-08-20", type: "Optional" as const },
-                            { name: "Autumn Hackathon Kickoff", date: "2026-10-02", type: "Company" as const },
-                            { name: "Winter Solstice Rest", date: "2026-12-21", type: "Mandatory" as const }
+                            { name: "Summer Wellness Day", date: `${currentYearStr}-08-20`, type: "Optional" as const },
+                            { name: "Autumn Hackathon Kickoff", date: `${currentYearStr}-10-02`, type: "Company" as const },
+                            { name: "Winter Solstice Rest", date: `${currentYearStr}-12-21`, type: "Mandatory" as const }
                           ];
                           setParsedHolidays(sample);
                           setUploadError('');

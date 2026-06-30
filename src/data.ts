@@ -8,7 +8,7 @@ export const DEFAULT_CATEGORIES: LeaveCategory[] = [
 
 export const INITIAL_LEAVES: LeaveRequest[] = [];
 
-export const HOLIDAYS: Holiday[] = [
+const STATIC_HOLIDAYS: Holiday[] = [
   {
     id: 'hol-1',
     date: '2026-01-01',
@@ -196,5 +196,11 @@ export const HOLIDAYS: Holiday[] = [
     type: 'Mandatory',
   },
 ];
+
+const currentYear = new Date().getFullYear();
+export const HOLIDAYS: Holiday[] = STATIC_HOLIDAYS.map(h => ({
+  ...h,
+  date: h.date.replace(/^2026-/, `${currentYear}-`)
+}));
 
 export const TEAM_MEMBERS: TeamMemberOut[] = [];

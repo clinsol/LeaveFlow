@@ -172,8 +172,9 @@ export function auditLeaveRequest(
   const end = new Date(leave.dateEnd);
   const reasonLower = leave.reason.toLowerCase().trim();
 
-  // Reference date for the notice period check (anchored to 2026-06-29)
-  const refDate = new Date("2026-06-29");
+  // Reference date for the notice period check (anchored to today)
+  const refDate = new Date();
+  refDate.setHours(0, 0, 0, 0);
 
   // Rule 1: Backdated non-sick leave (Senior HR Policy: No retroactive annual/casual leave bookings)
   if (start < refDate && leave.type !== 'Sick') {

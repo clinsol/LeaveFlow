@@ -197,6 +197,11 @@ export default function App() {
 
       </main>
 
+      {/* Footer signature */}
+      <footer className="w-full text-center py-6 pb-24 md:pb-8 text-xs text-on-surface-variant/60 font-medium border-t border-outline-variant/20">
+        <p>© {new Date().getFullYear()} Created by Roshan. All rights reserved.</p>
+      </footer>
+
       {/* Global Booking Dialog Bridge (triggered from Dashboard FAB) */}
       {globalOpenBooking && (
         <GlobalBookingBridge 
