@@ -1343,9 +1343,9 @@ export default function DashboardView({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-xl w-full max-w-md overflow-hidden"
+              className="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-xl w-full max-w-md max-h-[calc(100vh-2rem)] flex flex-col overflow-hidden"
             >
-              <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center">
+              <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center shrink-0">
                 <h3 className="text-lg font-bold text-on-surface flex items-center gap-2">
                   <Edit2 className="text-primary" size={20} />
                   Edit Time Off
@@ -1355,7 +1355,7 @@ export default function DashboardView({
                 </button>
               </div>
 
-              <form onSubmit={handleSaveEditLeave} className="p-6 space-y-4">
+              <form onSubmit={handleSaveEditLeave} className="p-6 space-y-4 overflow-y-auto flex-1">
                 {editError && (
                   <div className="p-3 bg-rose-50 text-rose-700 text-xs font-bold rounded-lg border border-rose-200 flex items-center gap-1.5">
                     <AlertTriangle size={14} />
@@ -1445,9 +1445,9 @@ export default function DashboardView({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-xl w-full max-w-md overflow-hidden"
+              className="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-xl w-full max-w-md max-h-[calc(100vh-2rem)] flex flex-col overflow-hidden"
             >
-              <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center">
+              <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center shrink-0">
                 <h3 className="text-lg font-bold text-on-surface flex items-center gap-2">
                   <Edit2 className="text-primary" size={20} />
                   Edit Holiday
@@ -1457,7 +1457,7 @@ export default function DashboardView({
                 </button>
               </div>
 
-              <form onSubmit={handleSaveEditHoliday} className="p-6 space-y-4">
+              <form onSubmit={handleSaveEditHoliday} className="p-6 space-y-4 overflow-y-auto flex-1">
                 {editHolidayError && (
                   <div className="p-3 bg-rose-50 text-rose-700 text-xs font-bold rounded-lg border border-rose-200 flex items-center gap-1.5">
                     <AlertTriangle size={14} />

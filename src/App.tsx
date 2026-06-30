@@ -8,6 +8,7 @@ import SettingsView from './components/SettingsView';
 import { generateCalendarGrid, calculateWorkDays, auditLeaveRequest } from './utils';
 import { motion, AnimatePresence } from 'motion/react';
 import { AlertTriangle, Calendar, X, RefreshCw, Check, Bot, CheckCircle } from 'lucide-react';
+import confetti from 'canvas-confetti';
 
 export default function App() {
   // Navigation Tabs state: Dashboard (Default), Calendar, Settings
@@ -101,6 +102,14 @@ export default function App() {
       id
     };
     setLeaves(prev => [...prev, leaveWithId]);
+
+    // Trigger subtle, corporate-colored confetti burst
+    confetti({
+      particleCount: 80,
+      spread: 60,
+      origin: { y: 0.7 },
+      colors: ['#0f172a', '#3b82f6', '#10b981', '#f59e0b', '#6366f1']
+    });
   };
 
   // Edit leave booking helper
@@ -273,9 +282,9 @@ function GlobalBookingBridge({ selectedDate, onAddLeave, onClose, categories, le
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-xl w-full max-w-md overflow-hidden"
+        className="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-xl w-full max-w-md max-h-[calc(100vh-2rem)] flex flex-col overflow-hidden"
       >
-        <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center">
+        <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center shrink-0">
           <h3 className="text-lg font-bold text-on-surface flex items-center gap-2">
             <Calendar className="text-primary" size={20} />
             Quick Book Time Off
@@ -285,7 +294,7 @@ function GlobalBookingBridge({ selectedDate, onAddLeave, onClose, categories, le
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="p-6 space-y-4 overflow-y-auto flex-1">
           {error && (
             <div className="p-3 bg-rose-50 text-rose-700 text-xs font-bold rounded-lg border border-rose-200 flex items-center gap-1.5">
               <AlertTriangle size={14} />
