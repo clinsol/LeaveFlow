@@ -6,80 +6,7 @@ export const DEFAULT_CATEGORIES: LeaveCategory[] = [
   { id: 'cat-optional', name: 'Optional', total: 2, color: 'text-emerald-500' }
 ];
 
-export const INITIAL_LEAVES: LeaveRequest[] = [
-  {
-    id: 'leave-1',
-    type: 'Accrued',
-    dateStart: '2026-05-20',
-    dateEnd: '2026-05-22',
-    days: 3,
-    reason: 'Vacation',
-    status: 'Approved',
-  },
-  {
-    id: 'leave-2',
-    type: 'Accrued',
-    dateStart: '2026-08-14',
-    dateEnd: '2026-08-14',
-    days: 1,
-    reason: 'Hyderabad Trip',
-    status: 'Approved',
-  },
-  {
-    id: 'leave-3',
-    type: 'Optional',
-    dateStart: '2026-09-14',
-    dateEnd: '2026-09-14',
-    days: 1,
-    reason: 'Fall Breather',
-    status: 'Approved',
-  },
-  {
-    id: 'leave-4',
-    type: 'Sick',
-    dateStart: '2026-10-28',
-    dateEnd: '2026-10-28',
-    days: 1,
-    reason: 'CAT Prep Sprint',
-    status: 'Approved',
-  },
-  {
-    id: 'leave-5',
-    type: 'Sick',
-    dateStart: '2026-11-18',
-    dateEnd: '2026-11-18',
-    days: 1,
-    reason: 'Mid-week Burnout',
-    status: 'Approved',
-  },
-  {
-    id: 'leave-6',
-    type: 'Optional',
-    dateStart: '2026-11-27',
-    dateEnd: '2026-11-27',
-    days: 1,
-    reason: 'CAT Focus Block',
-    status: 'Approved',
-  },
-  {
-    id: 'leave-7',
-    type: 'Accrued',
-    dateStart: '2026-12-16',
-    dateEnd: '2026-12-16',
-    days: 0.5,
-    reason: 'Winter Home Trip',
-    status: 'Approved',
-  },
-  {
-    id: 'leave-8',
-    type: 'Accrued',
-    dateStart: '2026-12-17',
-    dateEnd: '2026-12-31',
-    days: 10,
-    reason: 'Winter Home Trip',
-    status: 'Approved',
-  }
-];
+export const INITIAL_LEAVES: LeaveRequest[] = [];
 
 export const HOLIDAYS: Holiday[] = [
   {
@@ -270,15 +197,4 @@ export const HOLIDAYS: Holiday[] = [
   },
 ];
 
-export const TEAM_MEMBERS: TeamMemberOut[] = [
-  {
-    name: 'David',
-    avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKcrIaCOzQkU_GwL7xdqozlyWhuXErnPDIy_C7aCyqz2MpDIhOzaEd7waLjZmKfs_aWzWkHf6gUerOKP2vT7BkCAFDFvBehVG6S3oloJR6POpvqkUGvNupTuA1rhbNIcSyQsUCfOFBoOLaiROfkILM1IQfW0Uq6uYHpc-OXeEtgx9k88cn3woDBAmwI-2FnKlNu4wyavN-FM_xxsaTpGSWewq7Tu8TymEbKJl-_JalbPzpRx3upn6R',
-    type: 'Annual Leave'
-  },
-  {
-    name: 'Sarah',
-    avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDS_RVpmeuX1X78mn34gVEdxDMsF7lEcHoSxVg9dOl8uqY1KdyUpRKkHzr66Trw1O6VE94eaKMn6u63ngb9YuFe3uYmyz4jrNWg8YWiCjqyr_cOFDDSpXKVRSsUH5ny8xRjIcOz6NigqxolSXJ-f9qofnr36E1i2YCheSYHvDGBnlZTqT2tC2NL3E3VaFyGjIIEz76A82liVZfXMEdfIWkCUzMRsvIhTfwaRQMcbXQQMYGSKs7dIDj',
-    type: 'Annual Leave'
-  }
-];
+export const TEAM_MEMBERS: TeamMemberOut[] = [];
