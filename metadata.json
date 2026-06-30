@@ -1,0 +1,6 @@
+{
+  "name": "LeaveFlow",
+  "description": "A polished corporate modern workspace leave and holiday tracker.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
